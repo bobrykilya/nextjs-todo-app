@@ -5,7 +5,7 @@ import clsx from 'clsx'
 
 
 
-interface RoundButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+export interface RoundButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 	size?: ButtonSizeOptions
 }
 

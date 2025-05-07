@@ -1,20 +1,28 @@
 @use "reset"
 @use 'variables' as *
 
+
 html
     &[data-theme="light"]
-        --primary-color: rgb(76, 76, 76)
-    //--primary-color-rgb: 53, 53, 53
+        //--primary-color: $default-primary-color-light-mode
+        //--primary-color-rgb: $default-primary-color-light-mode-rgb
+        --primary-color: rgb(59, 72, 84)
+        --primary-color-rgb: 59, 72, 84
+        --secondary-color: rgb(215, 215, 215)
 
     &[data-theme="dark"]
+        //--primary-color: $default-primary-color-dark-mode
+        //--primary-color-rgb: $default-primary-color-dark-mode-rgb
         --primary-color: rgb(215, 215, 215)
-    //--primary-color-rgb: 215, 215, 215
+        --primary-color-rgb: 215, 215, 215
+        --secondary-color: rgb(59, 72, 84)
 
 
 body
     overflow: hidden
-    transition: color $bg-trans-dur $trans-style
+    transition: color $trans-bg-dur $trans-style
     color: var(--primary-color)
+    font-size: $size-main-text
 
     //* Dark theme
     background: radial-gradient(circle, #2c3942, #21282b)
@@ -29,10 +37,10 @@ body
         width: 200%
         height: 200%
         z-index: -10
-        background: radial-gradient(circle, #eefbff, #a6bdc7)
+        background: radial-gradient(circle, #eefbff, #adbfc7)
         border-bottom-right-radius: 50%
 
-        transition: transform $bg-trans-dur $trans-style
+        transition: transform $trans-bg-dur $trans-style
         transform: translate(-100%, -100%)
         [data-theme="light"] &
             transform: none

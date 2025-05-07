@@ -1,27 +1,12 @@
 @use '../../styles/variables' as *
 
 .round_but
-    //border: solid 1px black
+    //border: solid 1px var(--primary-color)
     border-radius: 50%
-    transition: all 0.2s $trans-style
-    //> *
-    //    transition: transform 0.1s $trans-style
-    &::before
-        content: ""
-        pointer-events: none
-        position: absolute
-        width: 100%
-        height: 100%
-        border-radius: 50%
-        background-color: rgba(137, 137, 137, 0.2)
-        transition: all 0.2s $trans-style
-        transform: scale(0)
-        z-index: -1
-    &:hover
-        &::before
-            transform: scale(1)
-//&:active > *
-//    transform: scale(0.9)
+    transition-property: all, background-color
+    transition-duration: 0.2s, $trans-bg-dur
+    transition-timing-function: $trans-style
+
 
 .size_m
     $size: 2rem

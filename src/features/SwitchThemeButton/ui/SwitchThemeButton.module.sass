@@ -9,13 +9,18 @@
     height: 200%
     justify-content: space-between
     transition-property: transform
-    transition-duration: 0.4s
-    transition-timing-function: cubic-bezier(.55, -0.25, .39, 1.23)
+    transition-duration: $trans-bg-dur * 1.3
+    transition-timing-function: cubic-bezier(.12, 1.67, .76, .82)
     transform: translateY(-25%)
 
 .light
     transform: translateY(25%)
 
 .fa_icon_cont
-    transition: transform 0.2s $trans-style
     height: 50%
+
+.sun
+    color: $default-primary-color-light-mode
+
+.moon
+    color: $default-primary-color-dark-mode
