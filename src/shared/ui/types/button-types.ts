@@ -1,0 +1,1 @@
+export type ButtonSizeOptions = 'm' | 'l' | 's'

@@ -1,39 +1,51 @@
 @use "reset"
 @use 'variables' as *
 
-[data-theme="light"]
-    --text-color: #353535
+html
+    &[data-theme="light"]
+        --primary-color: rgb(76, 76, 76)
+    //--primary-color-rgb: 53, 53, 53
 
-[data-theme="dark"]
-    --text-color: #d7d7d7
+    &[data-theme="dark"]
+        --primary-color: rgb(215, 215, 215)
+    //--primary-color-rgb: 215, 215, 215
+
 
 body
-    overflow-y: hidden
-    transition: color $trans-dur $trans-style
-    color: var(--text-color)
+    overflow: hidden
+    transition: color $bg-trans-dur $trans-style
+    color: var(--primary-color)
 
     //* Dark theme
-    background: radial-gradient(circle, #313639, #242525)
+    background: radial-gradient(circle, #2c3942, #21282b)
 
     //* Light theme cover for smoothness
     &::after
         content: ''
         pointer-events: none
         position: absolute
-        inset: 0
-        width: 100%
-        height: 100%
-        z-index: -1
-        background: radial-gradient(circle, #ececec, #bcbcbc)
-
-        //* Transition properties
-        transition-property: border-radius, transform
-        transition-duration: $trans-dur * 2, $trans-dur
-        transition-timing-function: $trans-style
-
+        left: -50%
+        top: -50%
+        width: 200%
+        height: 200%
+        z-index: -10
+        background: radial-gradient(circle, #eefbff, #a6bdc7)
         border-bottom-right-radius: 50%
+
+        transition: transform $bg-trans-dur $trans-style
         transform: translate(-100%, -100%)
         [data-theme="light"] &
-            border-radius: 0
-            transform: translate(0)
+            transform: none
 
+
+.g_cont
+    width: 100%
+    height: 100%
+    position: relative
+    overflow: hidden
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    overscroll-behavior: contain
+    flex-shrink: 0

@@ -15,7 +15,11 @@ export const metadata: Metadata = {
 	description: 'Application with Next.js and FSD',
 }
 
-export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+interface RootLayoutProps {
+	children: React.ReactNode
+}
+
+export default function RootLayout({ children }: RootLayoutProps) {
 
 
 	return (

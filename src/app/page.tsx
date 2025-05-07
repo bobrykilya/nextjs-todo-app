@@ -1,4 +1,5 @@
 import SwitchThemeButton from '@/features/SwitchThemeButton/ui/SwitchThemeButton'
+import clsx from 'clsx'
 
 
 
@@ -7,11 +8,8 @@ export default function Home() {
 
 	return (
 		<div
-			className={'bg-cover'}
+			className={clsx('g_cont')}
 		>
-			<p>
-				Hello
-			</p>
 			<SwitchThemeButton />
 		</div>
 	)

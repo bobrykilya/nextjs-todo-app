@@ -1,0 +1,21 @@
+@use '../../../shared/styles/variables' as *
+
+.switch_but
+    &:active
+        .fa_icon_cont
+            transform: scale(0.7) rotate(30deg)
+
+.switch_cont
+    height: 200%
+    justify-content: space-between
+    transition-property: transform
+    transition-duration: 0.4s
+    transition-timing-function: cubic-bezier(.55, -0.25, .39, 1.23)
+    transform: translateY(-25%)
+
+.light
+    transform: translateY(25%)
+
+.fa_icon_cont
+    transition: transform 0.2s $trans-style
+    height: 50%
