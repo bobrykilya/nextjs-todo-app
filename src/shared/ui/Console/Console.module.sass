@@ -7,15 +7,10 @@
     background-color: transparent
     color: var(--primary-color)
     padding: 1rem
-    border-radius: $rad-main / 2
+    border-radius: calc($rad-main / 2)
     transition: all $trans-bg-dur $trans-style
     font-size: $size-main-text
     resize: none
-    overflow-y: scroll
-    scroll-behavior: smooth
-    scroll-snap-type: y mandatory
-    -ms-overflow-style: none
-    scrollbar-width: none
     &::placeholder
         transition: color $trans-bg-dur $trans-style
         color: rgba(var(--primary-color-rgb), 0.4)

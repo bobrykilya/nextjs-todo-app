@@ -3,12 +3,16 @@ import React, { useEffect, useState } from 'react'
 import { useSwitchTheme } from '@/features/SwitchThemeButton/lib/useSwitchTheme'
 import clsx from 'clsx'
 import styles from './SwitchThemeButton.module.sass'
-import Icon from '@/shared/ui/icons/Icon'
+import Icon from '@/shared/ui/Icon/Icon'
 import BeforeHoverButton from '@/entities/BeforeHoverButton/ui/BeforeHoverButton'
 
 
 
-const SwitchThemeButton = () => {
+interface SwitchThemeButtonProps {
+	className?: string
+}
+
+const SwitchThemeButton = ({ className }: SwitchThemeButtonProps) => {
 
 	const { switchTheme, theme } = useSwitchTheme()
 
@@ -19,8 +23,8 @@ const SwitchThemeButton = () => {
 	return (
 		<BeforeHoverButton
 			onClick={switchTheme}
-			className={clsx(styles.switch_but)}
-			size={'l'}
+			className={clsx(styles.switch_but, className)}
+			tabIndex={1}
 		>
 			<div
 				className={clsx(styles.switch_cont, 'g_cont', mounted && theme && styles[theme])}
@@ -28,13 +32,12 @@ const SwitchThemeButton = () => {
 				<Icon
 					name={'sun'}
 					styles={styles}
-					size={35}
+					size={30}
 					className={styles.sun}
 				/>
 				<Icon
 					name={'moon'}
 					styles={styles}
-					size={25}
 					className={styles.moon}
 				/>
 			</div>

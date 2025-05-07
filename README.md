@@ -1,1 +1,1 @@
-Todo application as a pet-project with Next.js and FSD methodology
+ITodo application as a pet-project with Next.js, FSD methodology, style.modules, clsx, TurboPack

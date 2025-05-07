@@ -23,6 +23,7 @@ body
     transition: color $trans-bg-dur $trans-style
     color: var(--primary-color)
     font-size: $size-main-text
+    font-weight: 500
 
     //* Dark theme
     background: radial-gradient(circle, #2c3942, #21282b)
@@ -57,3 +58,10 @@ body
     align-items: center
     overscroll-behavior: contain
     flex-shrink: 0
+
+.g_hide_scroll
+    overflow-y: scroll
+    scroll-behavior: smooth
+    scroll-snap-type: y mandatory
+    -ms-overflow-style: none
+    scrollbar-width: none

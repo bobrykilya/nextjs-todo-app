@@ -7,7 +7,7 @@ import Providers from '@/app/Providers'
 
 
 const font = Nunito({
-	weight: ['500', '700'],
+	weight: ['400', '500'],
 })
 
 export const metadata: Metadata = {

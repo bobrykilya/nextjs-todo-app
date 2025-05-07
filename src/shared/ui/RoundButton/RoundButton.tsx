@@ -15,6 +15,7 @@ const RoundButton = ({ children, className, size = 'm', ...rest }: RoundButtonPr
 	return (
 		<button
 			type={'button'}
+			tabIndex={-1}
 			className={clsx(styles.round_but, styles[`size_${size}`], 'g_cont', className)}
 			{...rest}
 		>

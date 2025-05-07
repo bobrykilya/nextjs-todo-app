@@ -1,0 +1,17 @@
+@use '../../../shared/styles/variables' as *
+
+
+.todo_item
+    border: solid 1px rgba(var(--primary-color-rgb), 0.5)
+    background-color: rgba(var(--primary-color-rgb), 0.01)
+    width: auto
+    height: auto
+    min-width: 100px
+    min-height: 100px
+    max-height: 500px
+    max-width: 400px
+    padding: 1rem
+    border-radius: calc($rad-main * 1.5)
+    transition: all $trans-bg-dur $trans-style
+    &.completed
+        opacity: 0.1

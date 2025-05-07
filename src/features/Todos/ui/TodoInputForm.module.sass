@@ -1,13 +1,14 @@
 @use '../../../shared/styles/variables' as *
 
 
-.todo_form
+.todo_input_form
     width: 80%
+    max-width: 700px
     height: auto
     flex-direction: row
     border-radius: $rad-main
     padding: 0.5rem 1rem
-    backdrop-filter: blur(5px)
+    backdrop-filter: blur(10px)
     transition: all $trans-bg-dur $trans-style
     background-color: rgba(var(--primary-color-rgb), 0.1)
 
@@ -17,6 +18,9 @@
 
 .submit_but
     background-color: rgba(var(--primary-color-rgb), 0.9)
+    &:hover
+        transition: box-shadow 0.1s ease-out
+        box-shadow: 0 0 10px rgba(var(--primary-color-rgb), 0.7)
     &:active
         .fa_icon_cont
             transform: scale(0.7)
