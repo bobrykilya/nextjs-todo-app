@@ -1,5 +1,5 @@
 'use client'
-import React from 'react'
+import React, { useEffect } from 'react'
 import clsx from 'clsx'
 import styles from './TodoWidget.module.sass'
 import { useTodoStore } from '@/features/Todos/model/useTodoStore'
@@ -12,9 +12,13 @@ type TodoWidgetProps = {}
 const TodoWidget = ({}: TodoWidgetProps) => {
 
 	const todoList = useTodoStore(s => s.todoList)
-	const completeTodo = useTodoStore(s => s.completeTodo)
+	const toggleTodo = useTodoStore(s => s.toggleTodo)
 	const removeTodo = useTodoStore(s => s.removeTodo)
-	// console.log(todoList)
+	const initializeTodoList = useTodoStore(s => s.initializeTodoList)
+
+	useEffect(() => {
+		initializeTodoList()
+	}, [])
 
 
 	return (
@@ -22,14 +26,14 @@ const TodoWidget = ({}: TodoWidgetProps) => {
 			className={clsx('g_cont', styles.todo_widget)}
 		>
 			<ul
-				className={clsx('g_hide_scroll', styles.todo_list)}
+				className={clsx('g_cont', 'g_hide_scroll', styles.todo_list)}
 				tabIndex={-1}
 			>
 				{
 					todoList.map(todo => (
 						<TodoItem
 							key={todo.id}
-							completeTodo={completeTodo}
+							toggleTodo={toggleTodo}
 							removeTodo={removeTodo}
 							{...todo}
 						/>),

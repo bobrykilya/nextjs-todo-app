@@ -1,0 +1,14 @@
+import { formatDistanceToNow } from 'date-fns'
+
+
+
+export const getFormatTimeAgo = (timestamp: number) => {
+	return formatDistanceToNow(new Date(timestamp), {
+		addSuffix: true,
+	})
+}
+
+export const getDateInShortString = (timestamp: number) => {
+	const date = new Date(timestamp)
+	return date.toLocaleString().split(',')[0]
+}

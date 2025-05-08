@@ -3,22 +3,70 @@ import React from 'react'
 import clsx from 'clsx'
 import styles from './TodoItem.module.sass'
 import { ITodo, IUseTodoStore } from '@/features/Todos/model/types'
+import BeforeHoverButton from '@/entities/BeforeHoverButton/ui/BeforeHoverButton'
+import Icon from '@/shared/ui/Icon/Icon'
+import { getDateInShortString, getFormatTimeAgo } from '@/shared/lib/getTime'
 
 
 
 interface TodoItemProps extends ITodo {
-	completeTodo: IUseTodoStore['completeTodo']
+	toggleTodo: IUseTodoStore['toggleTodo']
 	removeTodo: IUseTodoStore['removeTodo']
 }
 
-const TodoItem = ({ id, text, completed, completeTodo, removeTodo }: TodoItemProps) => {
+const TodoItem = ({ id, text, completed, toggleTodo, removeTodo }: TodoItemProps) => {
 
 
 	return (
 		<li
 			className={clsx('g_cont', styles.todo_item, completed && styles['completed'])}
 		>
-			{text}
+			<div
+				className={clsx('g_cont', styles.todo_header)}
+			>
+				<span
+					className={clsx(styles.todo_text)}
+				>
+					{text}
+				</span>
+				<BeforeHoverButton
+					className={clsx(styles.todo_but, styles.remove_but)}
+					onClick={() => removeTodo(id)}
+				>
+					<Icon
+						name={'remove'}
+						styles={styles}
+						size={30}
+					/>
+				</BeforeHoverButton>
+			</div>
+			<div
+				className={clsx('g_cont', styles.todo_footer)}
+			>
+			    <span
+					className={styles.todo_created_at}
+					title={getDateInShortString(id)}
+				>
+			        Created: {getFormatTimeAgo(id)}
+			    </span>
+				<BeforeHoverButton
+					className={clsx(styles.todo_but, styles.toggle_but)}
+					onClick={() => toggleTodo(id)}
+				>
+					{
+						!completed ?
+							<Icon
+								name={'complete'}
+								styles={styles}
+								size={30}
+							/> :
+							<Icon
+								name={'undo'}
+								styles={styles}
+							/>
+					}
+				</BeforeHoverButton>
+			</div>
 		</li>
 	)
 }

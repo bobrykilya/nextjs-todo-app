@@ -5,4 +5,11 @@
     //border: solid 1px brown
     pointer-events: none
     will-change: transform
-    transition: all 0.1s $trans-style
+    transition-property: transform
+    transition-duration: 0.1s
+    transition-timing-function: $trans-style
+
+.fa_icon
+    transition-property: color
+    transition-duration: $trans-bg-dur
+    transition-timing-function: $trans-style

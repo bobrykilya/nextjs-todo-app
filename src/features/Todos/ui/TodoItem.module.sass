@@ -2,16 +2,55 @@
 
 
 .todo_item
-    border: solid 1px rgba(var(--primary-color-rgb), 0.5)
+    border: solid 1px rgba(var(--primary-color-rgb), 0.07)
     background-color: rgba(var(--primary-color-rgb), 0.01)
+    border-radius: calc($rad-main * 1.2)
+    padding: 1rem 0.7rem 1rem 1.5rem
+    $min-size: 200px
+    $max-size: 400px
     width: auto
+    min-width: calc($min-size * 1.3)
+    max-width: $max-size
     height: auto
-    min-width: 100px
-    min-height: 100px
-    max-height: 500px
-    max-width: 400px
-    padding: 1rem
-    border-radius: calc($rad-main * 1.5)
+    min-height: calc($min-size * 0.8)
+    max-height: $max-size
     transition: all $trans-bg-dur $trans-style
+    align-items: flex-start
+    justify-content: space-between
     &.completed
-        opacity: 0.1
+        border: solid 1px rgba(var(--primary-color-rgb), 0)
+        .todo_text, .todo_created_at
+            pointer-events: none
+            opacity: 0.1
+
+.todo_header
+    flex-direction: row
+    justify-content: space-between
+
+.todo_text
+    word-break: break-word
+    transition: opacity $trans-bg-dur $trans-style
+    margin-right: 0.3rem
+
+
+.todo_footer
+    margin-top: 0.5rem
+    flex-direction: row
+    justify-content: space-between
+
+.todo_created_at
+    font-size: calc($size-main-text * 0.7)
+    transition: all $trans-bg-dur $trans-style
+    color: rgba(var(--primary-color-rgb), 0.4)
+    text-align: $size-main-text * 2
+
+
+.fa_icon
+    color: rgba(var(--primary-color-rgb), 0.6)
+
+.todo_but
+    &:focus
+        border: none
+    &:active
+        .fa_icon_cont
+            transform: scale(0.7)

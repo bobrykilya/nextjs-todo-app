@@ -7,6 +7,7 @@ export interface ITodo {
 export interface IUseTodoStore {
 	todoList: ITodo[];
 	addTodo: (text: ITodo['text']) => void;
-	completeTodo: (id: ITodo['id']) => void;
+	toggleTodo: (id: ITodo['id']) => void;
 	removeTodo: (id: ITodo['id']) => void;
+	initializeTodoList: () => void;
 }
