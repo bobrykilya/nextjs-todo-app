@@ -2,8 +2,8 @@
 
 
 .todo_item
-    border: solid 1px rgba(var(--primary-color-rgb), 0.07)
-    background-color: rgba(var(--primary-color-rgb), 0.01)
+    border: solid 1px rgba(var(--primary-color-rgb), 0.2)
+    background-color: rgba(var(--primary-color-rgb), 0.02)
     border-radius: calc($rad-main * 1.2)
     padding: 1rem 0.7rem 1rem 1.5rem
     $min-size: 200px
@@ -19,13 +19,30 @@
     justify-content: space-between
     &.completed
         border: solid 1px rgba(var(--primary-color-rgb), 0)
+        .todo_checked
+            opacity: 1
+            transform: scale(1)
         .todo_text, .todo_created_at
             pointer-events: none
-            opacity: 0.1
+            opacity: 0.2
+            filter: blur(2px)
+
+.todo_checked
+    //border: solid 1px red
+    pointer-events: none
+    position: absolute
+    opacity: 0
+    inset: 0
+    transform: scale(0)
+    transition-property: opacity, transform
+    transition-duration: calc($trans-bg-dur * 0.5), 0.4s
+    transition-timing-function: ease-out, $bounce-style
+
 
 .todo_header
     flex-direction: row
     justify-content: space-between
+    overflow: visible
 
 .todo_text
     word-break: break-word

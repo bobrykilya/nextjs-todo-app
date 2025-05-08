@@ -8,7 +8,7 @@ export const getFormatTimeAgo = (timestamp: number) => {
 	})
 }
 
-export const getDateInShortString = (timestamp: number) => {
+export const getTimeInShortString = (timestamp: number) => {
 	const date = new Date(timestamp)
-	return date.toLocaleString().split(',')[0]
+	return date.toLocaleString().split(',')
 }

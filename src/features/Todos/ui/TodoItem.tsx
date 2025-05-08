@@ -5,7 +5,7 @@ import styles from './TodoItem.module.sass'
 import { ITodo, IUseTodoStore } from '@/features/Todos/model/types'
 import BeforeHoverButton from '@/entities/BeforeHoverButton/ui/BeforeHoverButton'
 import Icon from '@/shared/ui/Icon/Icon'
-import { getDateInShortString, getFormatTimeAgo } from '@/shared/lib/getTime'
+import { getFormatTimeAgo, getTimeInShortString } from '@/shared/lib/getTime'
 
 
 
@@ -21,6 +21,14 @@ const TodoItem = ({ id, text, completed, toggleTodo, removeTodo }: TodoItemProps
 		<li
 			className={clsx('g_cont', styles.todo_item, completed && styles['completed'])}
 		>
+			<div
+				className={clsx('g_cont', styles.todo_checked, completed && styles['completed'])}
+			>
+				<Icon
+					name={'check'}
+					size={70}
+				/>
+			</div>
 			<div
 				className={clsx('g_cont', styles.todo_header)}
 			>
@@ -45,7 +53,7 @@ const TodoItem = ({ id, text, completed, toggleTodo, removeTodo }: TodoItemProps
 			>
 			    <span
 					className={styles.todo_created_at}
-					title={getDateInShortString(id)}
+					title={getTimeInShortString(id)}
 				>
 			        Created: {getFormatTimeAgo(id)}
 			    </span>

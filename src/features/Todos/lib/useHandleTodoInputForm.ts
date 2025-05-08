@@ -16,7 +16,6 @@ export const useHandleTodoInputForm = () => {
 	const handleSubmitForm = (e?: React.FormEvent<HTMLFormElement>) => {
 		e && e.preventDefault()
 		if (inputText.trim()) {
-			console.log(inputText.trim())
 			addTodo(inputText.trim())
 			setInputText('')
 			inputRef.current?.focus()
