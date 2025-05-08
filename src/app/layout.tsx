@@ -7,6 +7,7 @@ import Providers from '@/app/Providers'
 
 
 const font = Nunito({
+	subsets: ['latin'],
 	weight: ['400', '500'],
 })
 
