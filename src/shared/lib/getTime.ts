@@ -10,5 +10,5 @@ export const getFormatTimeAgo = (timestamp: number) => {
 
 export const getTimeInShortString = (timestamp: number) => {
 	const date = new Date(timestamp)
-	return date.toLocaleString().split(',')
+	return date.toLocaleString()
 }
