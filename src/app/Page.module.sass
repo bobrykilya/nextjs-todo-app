@@ -11,3 +11,8 @@
     opacity: 0.2
     font-weight: 400
     font-size: calc($size-main-text / 1.2)
+    transition: opacity $trans-bg-dur $trans-style
+
+@media (max-height: 600px)
+    .name_tag
+        opacity: 0

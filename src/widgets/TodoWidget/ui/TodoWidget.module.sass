@@ -6,10 +6,20 @@
     padding: 2rem 4rem 7rem
     flex-direction: row
     align-content: flex-start
-    justify-content: flex-start
     flex-wrap: wrap
     gap: 1rem
+    transition: all $trans-bg-dur $trans-style
 
 .todo_input_form
     position: absolute
     bottom: 1.3rem
+    transition: transform $trans-bg-dur $trans-style
+
+@media (max-width: 950px)
+    .todo_list
+        //border: solid 1px red
+        padding: 2.5rem 1rem 7rem
+
+@media (max-height: 600px)
+    .todo_input_form
+        transform: translateY(1rem)

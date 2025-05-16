@@ -11,7 +11,7 @@ interface ProvidersProps {
 const Providers = ({ children }: ProvidersProps) => {
 	return (
 		<ThemeProvider
-			defaultTheme={'system'}
+			defaultTheme={'dark'}
 			enableSystem={true}
 		>
 			{children}
